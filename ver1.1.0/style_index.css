@@ -1,0 +1,118 @@
+
+
+
+
+/*============= COURSE SECTION =============*/
+
+
+.text1{
+animation-duration: 4s;
+text-align: center;
+background-color:transparent;
+/*height:300px;
+width:500px;*/
+color: #ffffff;
+border: 1px solid white; 
+margin: 0;
+position: absolute;
+top: 30%;
+left: 50%;
+-ms-transform: translate(-50%, -50%);
+transform: translate(-50%, -50%);  
+}
+
+.testimony {
+  background: #c49b63;
+  padding: 2em;
+  color: #fff;
+}
+
+
+
+.aboutusrow{
+    display: flex;
+    
+    margin-right: -15px;
+    margin-left: -15px;
+    margin: 2%;
+}
+
+button{
+  width:max-content;
+  font:arial;
+  background-color: #ffffff;
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-weight:bold;
+  font-size: 16px;
+  margin: 0px 2px;
+  cursor: pointer
+ }  
+ nav{
+   background-color:rgba(0, 0, 0, .6);
+ }
+ 
+.narrow {
+  width: 75%;
+  margin: 0 auto;
+  padding-top: 2rem;
+}
+.btn-md {
+  border-width: medium;
+  border-radius: 0;
+  padding: .6rem 1.1rem;
+  text-transform: uppercase;
+  margin: 1rem;
+}
+.btn-secondary {
+  border-width: medium;
+  border-radius: 0;
+  padding: .6rem 1.2rem;
+  font-size: 1.2rem;
+  text-transform: uppercase;
+  margin: 1rem;
+  border-color: #1EBBA3;
+  background-color: #1EBBA3;
+  color: white;
+}
+.btn-secondary:hover,
+.btn-secondary:focus {
+  border-color: #189582;
+  background-color: #189582;
+  color: white;
+}
+@media only screen and (max-width: 575px){
+.content {
+    padding-left: 30px;
+}
+}
+
+.parallax{
+  min-height: 500px;
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+/*============ BOOTSTRAP BREAK POINTS:
+
+Extra small (xs) devices (portrait phones, less than 576px)
+No media query since this is the default in Bootstrap
+
+Small (sm) devices (landscape phones, 576px and up)
+@media (min-width: 576px) { ... }
+
+Medium (md) devices (tablets, 768px and up)
+@media (min-width: 768px) { ... }
+
+Large (lg) devices (desktops, 992px and up)
+@media (min-width: 992px) { ... }
+
+Extra (xl) large devices (large desktops, 1200px and up)
+@media (min-width: 1200px) { ... }
+
+=============*/
