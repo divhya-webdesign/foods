@@ -5,11 +5,24 @@ $conn = Connect();
 
 ?>
 
-<html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Restaurant</title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+	<link rel="stylesheet"  href="style.css">
+	<link rel="stylesheet"  href="css/fixed.css">
+<link href="https://fonts.googleapis.com/css2?family=Lato:wght@700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="font/flaticon.css">
+</head>
 
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<!--- Script Source Files -->
+<script src="js/jquery-3.3.1.min.js"></script>
+<script src="bootstrap-4.1.3-dist/js/bootstrap.min.js"></script>
+<script src="https://use.fontawesome.com/releases/v5.6.1/js/all.js"></script>
+<!--- End of Script Source Files -->
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
@@ -86,7 +99,7 @@ $conn = Connect();
         cursor: pointer;
       }
       </style>
-  </head>
+
 
   <body>
 
@@ -95,7 +108,7 @@ $conn = Connect();
       top
     </button>
   
-  <nav class="navbar navbar-expand-lg navbar-light bg-light" role="navigation" style="height: 70px; background-color: white; box-shadow: 0px 0px 2px #000000;">
+  <!--<nav class="navbar navbar-expand-lg navbar-light bg-light" role="navigation" style="height: 70px; background-color: white; box-shadow: 0px 0px 2px #000000;">
     <a class="navbar-brand" href="#">Le Felicite</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#myNavbar" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
@@ -103,21 +116,54 @@ $conn = Connect();
     <div class="collapse navbar-collapse" id="myNavbar" style="width: 100%;">
     <ul class="navbar-nav mr-auto" style="width: 100%;">
       <li class="nav-item align-middle">
-        <a class="nav-link" href="index.html">Back to home</a>
-      </li>
+        <a class="nav-link" href="index.php">Back to home</a>
+      </li>-->
   
+
+      <nav class="navbar navbar-expand-md navbar-custom navbar-dark fixed-top show-on-scroll " style="border-bottom: 5px solid #ceb829;">
+		<div class="container-fluid " id="navbarResponsive">
+
+			<div class="header_content ">
+				<div class="logo">
+					<a href="#">
+						<div style="font-size: 30px;line-height: 0.75;color: #FFFFFF;font-family: 'PT Sans Narrow', sans-serif;">The Venue</div>
+						<div style="font-size: 12px;text-transform: uppercase;color: #FFFFFF;letter-spacing: 0.680em;line-height: 0.75;margin-top: 12px;">restaurant</div>
+					</a>
+				</div>
+			</div>
+
+		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive">
+		<span class="navbar-toggler-icon"></span>
+		</button>
+		<div class="collapse navbar-collapse" id="navbarResponsive">
+		<ul class="navbar-nav ml-auto" style="padding-left:10px;">
+		
+			<li class="nav-item" style="padding-right:15px;">
+			  <a class="nav-link" href="index.php" >HOME</a>
+			</li>
+			<li class="nav-item" style="padding-right:15px">
+			  <a class="nav-link" href="booking.php" >RESERVATION</a>
+			</li>
+		   <li class="nav-item active" style="padding-right:15px" >
+			  <a class="nav-link" href="order.php">MENU</a>
+			</li>
+		   <li class="nav-item" style="padding-right:15px">
+			  <a class="nav-link" href="gal.php">GALLERY</a>
+			</li>
+
 <?php
 
 //USER WHO HAS LOGGED IN
 if (isset($_SESSION['login_user2'])) {
   ?>
-        <div class="container px-0"> 
-    <li class="nav-item active"><a class="nav-link" href="logout_u.php"> Log Out </a></li>  
-    <li class="nav-item">
-      <a class="nav-link disabled" href="#"> <b style="letter-spacing: 1px;"> Signed in as <?php echo $_SESSION['login_user2']; ?> </b> </a>
+        
+    <li class="nav-item" style="padding-right:15px"><a class="nav-link" href="logout_u.php">LOG OUT</a></li>  
+
+    <li class="nav-item" style="padding-right:15px">
+      <a class="nav-link disabled" href="#" style="color:#ceb829"><B>Signed in as <?php echo $_SESSION['login_user2']; ?> </b> </a>
     </li>
-    <li class="nav-item clickable" onclick="toggleCart()">
-      <span class="nav-link active">  <img src="https://www.freeiconspng.com/uploads/grocery-basket-icon-1.png" height="30px" width="30px"> 
+    <li class="nav-item clickable" onclick="toggleCart()" style="padding-right:15px">
+      <span class="nav-link active"> <img src="https://www.freeiconspng.com/uploads/grocery-basket-icon-1.png" height="25px" width="25px"> 
         (<?php
         if(isset($_SESSION["cart"])){
           $count = count($_SESSION["cart"]); 
@@ -130,7 +176,7 @@ if (isset($_SESSION['login_user2'])) {
         </li>
       </div>
       </ul>
-      </div>
+      
     </nav>
 
     <div class="wide">
@@ -468,12 +514,11 @@ else {
             'food_quantity' => $_POST["quantity"]
             );
             $_SESSION["cart"][$count] = $item_array;
-            echo '<script>window.location="order.php"</script>';
             }
             else
             {
             echo '<script>alert("Products already added to cart")</script>';
-            echo '<script>window.location="order.php"</script>';
+            echo '<script>window.location=""</script>';
             }
             }
             else
@@ -486,7 +531,6 @@ else {
             'food_quantity' => $_POST["quantity"]
             );
             $_SESSION["cart"][0] = $item_array;
-            echo '<script>window.location="order.php"</script>';
             }
             }
             if(isset($_GET["action"]))
@@ -499,7 +543,7 @@ else {
             {
             unset($_SESSION["cart"][$keys]);
             echo '<script>alert("Food has been removed")</script>';
-            echo '<script>window.location="order.php"</script>';
+            echo '<script>window.location=""</script>';
             }
             }
             }
@@ -511,9 +555,11 @@ else {
             {
             foreach($_SESSION["cart"] as $keys => $values)
             {
+
             unset($_SESSION["cart"]);
-            echo '<script>alert("Cart is empty")</script>';
-            echo '<script>window.location="order.php"</script>';
+            echo '<script>alert("Cart is made empty!")</script>';
+            echo '<script>window.location=""</script>';
+
             }
             }
             }
@@ -527,14 +573,14 @@ else {
         </div>
       </div>
       <br>
-      <div class="col-xs-5"><hr></div>
+      <!--<div class="col-xs-5"><hr></div>
       <br>
       <div class="orderblock">
         <h2>Feeling Hungry?</h2>
         <p>Order now to select from more items</p><br>
         <center><a class="btn btn-outline-dark btn-lg" href="customerlogin.php" role="button" > Order Now </a></center>
       </div>
-    </div>
+    </div>-->
 
 <?php
 }
@@ -542,9 +588,68 @@ else {
        
 
     <br><br>
-    <footer class="bg-dark" style="height: 100px; color: #dddddd; padding: 40px; padding-right: 100px;">
-     <span style="float: left;"> © Le Félicité 2020 </span> <span style="float: right;"> Made by Mansi, Lakshmi, Divhya</span>
-    </footer>
+    <div class= "footer bg-dark" id="footer" style="text-align: center;padding-top: 7%;color:white">
+
+	<div class="container">
+		<div class="row">
+		<div class="col-md-3 fadeInUp ">
+		<div class="d-block text-center block-7 ">
+		<div class="d-flex justify-content-center align-items-center mb-5">
+			<B>VISIT US</B>
+		</div>
+		<div class="media-body">
+			Kamala Mills Compound,<br> Lower Parel,<br>Mumbai, Maharashtra 400013
+			</div>
+		</div>
+		</div>
+
+		<div class="col-md-3 fadeInUp">
+		<div class="d-block text-center block-7 ">
+		<div class="d-flex justify-content-center align-items-center mb-5">
+			<b>OPENING HOURS</b>
+		</div>
+		<div class="media-body">
+			Dine-in; Monday-Sunday<br>Lunch: 12pm – 4pm<br>Dinner: 7pm – 10pm 
+			</div>
+		</div>
+		</div>
+
+		<div class="col-md-3 fadeInUp">
+			<div class="d-block text-center block-7">
+			<div class="d-flex justify-content-center align-items-center mb-5">
+				<b>DELIVERY</b>
+			</div>
+			<div class="media-body">
+				Monday – Thursday <br>12pm – 10pm<br>Friday – Sunday <br> 12pm – 10.30pm
+				</div>
+			</div>
+			</div>
+
+			<div class="col-md-3 fadeInUp">
+				<div class="d-block text-center block-7">
+				<div class="d-flex justify-content-center align-items-center mb-5">
+					<b>GENERAL ENQUIRIES</b>
+				</div>
+				<div class="media-body">
+					Call +919876543210,<BR>+911234567890,<br>+919876543210
+					</div>
+				</div>
+				</div>
+			
+		</div>
+		<br><br>
+		<!--<a href="#" style="color: #77724b;"><i class="fab fa-facebook" style="font-size: 50px;margin-right: 30px;"></i></a>
+		<a href="#" style="color: #77724b;"><i class="fab fa-instagram" style="font-size: 50px;margin-right: 30px;"></i></a>
+		<a href="#" style="color: #77724b;"><i class="fab fa-twitter" style="font-size: 50px;"></i></a>-->
+		<br><br>
+	    <div style="display: grid;">
+		  <div style="grid-column:1;grid-row:1;">© 2020, The Venue</div>
+		  <div style="grid-column:2;float: right;">Designed by Lakshmi, Mansi and Divhya</div>
+	    </div>
+		<br><br>
+    </div>
+</div>
+
 
       <script type="text/javascript">
         window.onscroll = function()
