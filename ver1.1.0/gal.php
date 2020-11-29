@@ -46,7 +46,7 @@
 			
 			.text-block {
 			  position: absolute;
-			  bottom: 250px;
+			  bottom: 320px;
 			  right: 520px;
 			  border: 2px solid black;
 			  background-color: black;
@@ -320,7 +320,7 @@
 		<br><br>
 	    <div style="display: grid;">
 		  <div style="grid-column:1;grid-row:1;">© 2020, The Venue</div>
-		  <div style="grid-column:2;float: right;">Designed by Lakshmi, Mansi and Divhya</div>
+		  <div style="grid-column:2;float: right;">Designed by Divhya, Mansi and Lakshmi</div>
 	    </div>
 		<br><br>
 	    </div>
