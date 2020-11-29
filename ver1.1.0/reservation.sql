@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.0.2
+-- version 5.0.4
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 29, 2020 at 09:18 AM
--- Server version: 10.4.13-MariaDB
--- PHP Version: 7.2.31
+-- Generation Time: Nov 29, 2020 at 10:00 PM
+-- Server version: 10.4.16-MariaDB
+-- PHP Version: 7.3.24
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -43,35 +43,10 @@ CREATE TABLE `bookingtable` (
 --
 
 INSERT INTO `bookingtable` (`bookingID`, `bookingType`, `numPeople`, `bookingDate`, `bookingTime`, `bookingFName`, `bookingLName`, `bookingPNumber`) VALUES
-(1, 'Outdoor', '4', '30-11', '15-00', 'Zara', 'v', '23124454536'),
-(2, 'Outdoor', '3', '1-12', '12-00', 'Zara', 'A', '23124454536'),
-(3, 'Outdoor', '3', '27-11', '18-00', 'Diana', 'A', '23124454536'),
-(4, 'Outdoor', '3', '1-12', '24-00', 'Diana', 'Grey', '2312445'),
-(5, 'Formal', '4', '27-11', '15-00', 'Yena', 'A', '23124454536');
-
-
--- --------------------------------------------------------
-
---
--- Table structure for table `feedbacktable`
---
-
-CREATE TABLE `feedbacktable` (
-  `msgID` int(12) NOT NULL,
-  `senderfName` varchar(50) NOT NULL,
-  `senderlName` varchar(50) DEFAULT NULL,
-  `sendereMail` varchar(100) NOT NULL,
-  `senderfeedback` varchar(500) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
---
--- Dumping data for table `feedbacktable`
---
-
-INSERT INTO `feedbacktable` (`msgID`, `senderfName`, `senderlName`, `sendereMail`, `senderfeedback`) VALUES
-(1, 'Ahmed', 'Ali', 'Ahmed@mail.com', 'Hello first'),
-(2, 'Ahmed', 'Ali', 'asa@as.com', 'asdas'),
-(3, 'gvgvhv', 'bfxfdxfx', 'rew@', 'try');
+(14, 'Private-hall', '2', '2-12', '24-00', 'm', 'm', '98374859673'),
+(15, 'Formal', '4', '1-12', '18-00', 'Mansi', 'Ayer', '9854637456'),
+(16, 'Casual', '6', '30-11', '21-00', 'S', 'Bala', '93746583748'),
+(17, 'Private-hall', '10', '27-11', '12-00', 'm', 'm', '5');
 
 -- --------------------------------------------------------
 
@@ -126,13 +101,6 @@ ALTER TABLE `bookingtable`
   ADD KEY `bookingID_4` (`bookingID`);
 
 --
--- Indexes for table `feedbacktable`
---
-ALTER TABLE `feedbacktable`
-  ADD PRIMARY KEY (`msgID`),
-  ADD UNIQUE KEY `msgID` (`msgID`);
-
---
 -- Indexes for table `tablelist`
 --
 ALTER TABLE `tablelist`
@@ -146,13 +114,7 @@ ALTER TABLE `tablelist`
 -- AUTO_INCREMENT for table `bookingtable`
 --
 ALTER TABLE `bookingtable`
-  MODIFY `bookingID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
-
---
--- AUTO_INCREMENT for table `feedbacktable`
---
-ALTER TABLE `feedbacktable`
-  MODIFY `msgID` int(12) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `bookingID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
 
 --
 -- AUTO_INCREMENT for table `tablelist`

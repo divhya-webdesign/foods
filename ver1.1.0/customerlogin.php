@@ -10,33 +10,17 @@ header("location: order.php");
 <html>
 
   <head>
-    <title> Login | Le Félicite </title>
+    <title> Login | Le Félicité </title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+    <link rel="stylesheet"  href="style.css">
+  
 
     <style type="text/css">
       body {
-      font-family: sans-serif;
-      background-color: #dddddd;
-      text-align: center;
-      }
-      #toTop{
-        display: none;
-        position: fixed;
-        bottom: 20px;
-        right: 30px;
-        z-index: 99;
-        border: none;
-        outline: none;
-        background-color: white;
-        color: #555555;
-        cursor: pointer;
-        padding: 15px;
-        border-radius: 40px;
-      }
-      #toTop:hover {
-        background-color: darkgreen;
-        color: white;
-      }
+          font-family: sans-serif;
+          background: #eeeeee url(https://assets.yellowtrace.com.au/wp-content/uploads/2013/07/APOLLO-Sydney-by-George-Livissianis-Yellowtrace-01.jpg) fixed;
+          text-align: center;
+        }
       .bg-4{
         background-color: #2f2f2f;
         color: #ffffff;
@@ -49,16 +33,16 @@ header("location: order.php");
   <body>
 
 
-  <nav class="navbar navbar-expand-lg navbar-light bg-light" role="navigation" style="height: 70px; background-color: white; box-shadow: 0px 0px 2px #000000;">
-    <a class="navbar-brand" href="index.html">Le Felicite</a>
+  <nav class="navbar navbar-expand-md navbar-custom navbar-dark " style="border-bottom: 5px solid #ceb829; height: 85px;">
+    <a class="navbar-brand" href="index.php"> <i>Las Félicité</i></a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#myNavbar" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="myNavbar" style="width: 100%;">
-      <ul class="navbar-nav mr-auto" style="width: 100%;">
-        <li class="nav-item">
-          <a class="nav-link" href="order.php">Back to menu</a>
-        </li>
+    <ul class="navbar-nav mr-auto" style="width: 100%;">
+      <li class="nav-item align-middle">
+        <a class="nav-link" href="index.php">Back to home</a>
+      </li>
       </ul>
     </div>
   </nav>
@@ -66,9 +50,8 @@ header("location: order.php");
 
 
     <div class="container" style="padding-top: 2%; text-align: left;">
-    <div class="jumbotron bg-4">
-     <h1>Welcome Customer</h1>
-     <br>
+    <div class="jumbotron bg-4" >
+     <h1 style="margin-left: 40px;">Welcome Customer</h1>
 
     <div class="container" style="margin-bottom: 2%;">
       <div class=" col-md-offset-4">
@@ -106,8 +89,8 @@ header("location: order.php");
               </div>
 
             </div>
-            <label>or</label> <br>
-           <label><a href="customersignup.php">Create a new account.</a></label>
+            <label style="margin-left: 20px;">or</label> <br>
+           <label style="margin-left: 20px;"><a href="customersignup.php">Create a new account.</a></label>
 
             </form>
             </div>     
