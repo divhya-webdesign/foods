@@ -1,0 +1,97 @@
+
+.aboutusrow {
+  width: 100%;
+  background: #FFFFFF;
+  padding-top: 90px;
+  padding-bottom: 90px;
+  display: flex;
+  margin-right: -15px;
+  margin-left: -15px;
+  margin: 2%;
+}
+/*--- Extra Bootstrap Column Padding --*/
+[class*="col-"] {
+  padding: 1rem;
+}
+
+/*--- Bootstrap Mobile Gutter Fix --*/
+.row, .container-fluid ,.carousel ,.aboutusrow ,.easytoorder, .footer {
+  margin-left: 0px!important;
+  margin-right: 0px!important;
+}
+
+/*============= IMAGE SLIDER =============*/
+
+.carousel-item {
+  background: no-repeat center center scroll;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+/*---Change Carousel Transition Speed --*/
+.carousel-item-next, .carousel-item-prev, .carousel-item.active {
+  display: block;
+  transition: -webkit-transform 1.2s ease;
+  transition: transform 1.2s ease;
+  transition: transform 1.2s ease,-webkit-transform 1.2s ease;
+
+}
+
+.testimony {
+  background: #c49b63;
+  padding: 2em;
+  color: #fff;
+}
+
+button{
+  width:max-content;
+  font:arial;
+  background-color: #ffffff;
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-weight:bold;
+  font-size: 16px;
+  margin: 0px 2px;
+  cursor: pointer
+ }  
+ nav{
+   background-color:rgba(0, 0, 0, .6);
+ }
+ 
+.narrow {
+  width: 75%;
+  margin: 0 auto;
+  padding-top: 2rem;
+}
+
+.parallax{
+  min-height: 500px;
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+/*============ BOOTSTRAP BREAK POINTS:
+
+Extra small (xs) devices (portrait phones, less than 576px)
+No media query since this is the default in Bootstrap
+
+Small (sm) devices (landscape phones, 576px and up)
+@media (min-width: 576px) { ... }
+
+Medium (md) devices (tablets, 768px and up)
+@media (min-width: 768px) { ... }
+
+Large (lg) devices (desktops, 992px and up)
+@media (min-width: 992px) { ... }
+
+Extra (xl) large devices (large desktops, 1200px and up)
+@media (min-width: 1200px) { ... }
+
+=============*/
