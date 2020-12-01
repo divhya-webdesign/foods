@@ -27,8 +27,38 @@ $stmt -> store_result();
 
 if ($stmt->fetch())  
 {
+	$num1 = rand(1,50); 
+	$num2 = rand(1,50); 
+	$num3 = rand(1,50);
+	$number = $num1.$num2.$num3;
+
 	$_SESSION['login_user2']=$username; // Initializing Session
-	header("location: order.php"); // Redirecting To Other Page
+	$_SESSION['extra_loc']=$number; //for saving cart
+
+	$query1 = "SELECT * FROM CART WHERE username='" . $username . "';";
+	$success1 = $conn->query($query1);
+	$result = mysqli_query($conn, $query1);
+                if (mysqli_num_rows($result) > 0)
+                {
+                  $count=0;
+                  while($row = mysqli_fetch_assoc($result))
+                  {
+                  	$item_array = array(
+		            'food_id' => $row["F_ID"],
+		            'food_name' => $row["foodname"],
+		            'food_price' => $row["price"],
+		            'food_quantity' => $row["quantity"]);
+		            $_SESSION["cart"][$count] = $item_array;
+		            $count=$count+1;
+
+                  }
+                  echo '<script>alert("Found "' . $count . '" items in cart")</script>';
+              }
+	if(!$success1) {
+		echo '<script>alert("Could not connect to cart")</script>';
+	}
+
+	header("location: index.php"); // Redirecting To Other Page
 } else {
 $error = "Username or Password is invalid";
 }

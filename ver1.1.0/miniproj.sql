@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 29, 2020 at 09:59 PM
+-- Generation Time: Dec 01, 2020 at 03:04 AM
 -- Server version: 10.4.16-MariaDB
 -- PHP Version: 7.3.24
 
@@ -20,6 +20,21 @@ SET time_zone = "+00:00";
 --
 -- Database: `miniproj`
 --
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `cart`
+--
+
+CREATE TABLE `cart` (
+  `F_ID` int(30) NOT NULL,
+  `foodname` varchar(30) NOT NULL,
+  `price` int(30) NOT NULL,
+  `quantity` int(30) NOT NULL,
+  `order_date` date NOT NULL,
+  `username` varchar(30) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
 
@@ -41,7 +56,6 @@ CREATE TABLE `customer` (
 --
 
 INSERT INTO `customer` (`username`, `fullname`, `email`, `contact`, `address`, `password`) VALUES
-('man', 'man', 'q@w.com', '7', 'nerul', 'qw'),
 ('mm', 'mansi', 'mansi@sies.in', '8457693756', 'home at home', 'postgres'),
 ('test', 'test', 't@e.st', '9384738273', 'india', 'orange');
 
@@ -94,20 +108,20 @@ CREATE TABLE `orders` (
   `quantity` int(30) NOT NULL,
   `order_date` date NOT NULL,
   `username` varchar(30) NOT NULL,
-  `O_ID` int(6) NOT NULL
+  `O_ID` int(6) NOT NULL,
+  `rand` int(30) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
---
--- Dumping data for table `orders`
---
-
-INSERT INTO `orders` (`F_ID`, `foodname`, `price`, `quantity`, `order_date`, `username`, `O_ID`) VALUES
-(63, 'walnut brownie', 75, 4, '2020-11-29', 'man', 351221),
-(63, 'walnut brownie', 75, 4, '2020-11-29', 'man', 193630);
 
 --
 -- Indexes for dumped tables
 --
+
+--
+-- Indexes for table `cart`
+--
+ALTER TABLE `cart`
+  ADD KEY `cart_1` (`F_ID`),
+  ADD KEY `cart_2` (`username`);
 
 --
 -- Indexes for table `customer`
@@ -125,6 +139,7 @@ ALTER TABLE `food`
 -- Indexes for table `orders`
 --
 ALTER TABLE `orders`
+  ADD PRIMARY KEY (`rand`),
   ADD KEY `F_ID` (`F_ID`),
   ADD KEY `username` (`username`);
 
@@ -139,8 +154,21 @@ ALTER TABLE `food`
   MODIFY `F_ID` int(30) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=80;
 
 --
+-- AUTO_INCREMENT for table `orders`
+--
+ALTER TABLE `orders`
+  MODIFY `rand` int(30) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
+
+--
 -- Constraints for dumped tables
 --
+
+--
+-- Constraints for table `cart`
+--
+ALTER TABLE `cart`
+  ADD CONSTRAINT `cart_1` FOREIGN KEY (`F_ID`) REFERENCES `food` (`F_ID`),
+  ADD CONSTRAINT `cart_2` FOREIGN KEY (`username`) REFERENCES `customer` (`username`);
 
 --
 -- Constraints for table `orders`

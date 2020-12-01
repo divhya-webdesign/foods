@@ -13,7 +13,7 @@ $conn = Connect();
 	    <link rel="stylesheet"  href="style.css">
       <link rel="stylesheet"  href="css/fixed.css">
       <link href="https://fonts.googleapis.com/css2?family=Lato:wght@700&display=swap" rel="stylesheet">
-      <link rel="stylesheet" href="font/flaticon.css">
+	  <link rel="stylesheet" href="font/flaticon.css">
 
 
 
@@ -106,23 +106,23 @@ $conn = Connect();
     </button>
   
   
-  <nav class="navbar navbar-expand-md navbar-custom navbar-dark fixed-top show-on-scroll " style="border-bottom: 5px solid #ceb829; text-align: left;">
-    <div class="container-fluid " id="navbarResponsive">
+  <nav class="navbar navbar-expand-md navbar-custom navbar-dark fixed-top show-on-scroll" style="border-bottom: 5px solid #ceb829;font-size:18px">
+		<div class="container-fluid " id="navbarResponsive">
 
-      <div class="header_content ">
-        <div class="logo">
-          <a href="index.php">
-            <div style="font-size: 30px;line-height: 0.75;color: #FFFFFF;font-family: 'PT Sans Narrow', sans-serif;">The Venue</div>
-            <div style="font-size: 11px;text-transform: uppercase;color: #FFFFFF;letter-spacing: 0.680em;line-height: 0.75;margin-top: 12px;">restaurant</div>
-          </a>
-        </div>
-      </div>
+			<div class="header_content ">
+				<div class="logo">
+					<a href="index.php">
+						<div style="font-size: 33px;line-height: 1;color: #FFFFFF; font-family: 'PT Sans Narrow', sans-serif;">The Venue</div>
+						<div style="font-size: 14px;text-transform: uppercase;color: #FFFFFF;letter-spacing: 0.600em;line-height: 0.80;margin-top: 12px;">restaurant</div>
+					</a>
+				</div>
+			</div>
 
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#myNavbar">
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive">
     <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarResponsive">
-    <ul class="navbar-nav ml-auto" style="padding-left:10px; font-size: 15px;">
+    <ul class="navbar-nav ml-auto" style="padding-left:10px; color: white;">
     
       <li class="nav-item" style="padding-right:15px;">
         <a class="nav-link" href="index.php" >HOME</a>
@@ -246,7 +246,7 @@ if (isset($_SESSION['login_user2'])) {
             <td><?php echo $values["food_quantity"] ?></td>
             <td>&#8377; <?php echo $values["food_price"]; ?></td>
             <td>&#8377; <?php echo number_format($values["food_quantity"] * $values["food_price"], 2); ?></td>
-            <td><a href="?action=delete&id=<?php echo $values["food_id"]; ?>"><span class="text-danger">Remove</span></a></td>
+            <td><a href="order.php?action=delete&id=<?php echo $values["food_id"]; ?>"><span class="text-danger">Remove</span></a></td>
             </tr>
             <?php 
             $total = $total + ($values["food_quantity"] * $values["food_price"]);
@@ -260,7 +260,7 @@ if (isset($_SESSION['login_user2'])) {
             </table>
             
             <?php
-              echo '<a href="?action=empty"><button class="btn btn-danger"></span> Empty Cart </button></a><a href="order.php"><button class="btn btn-warning"> Continue Shopping</button></a>&nbsp;<a href="payment.php"><button class="btn btn-success pull-right"></span> Check Out</button></a>';
+              echo '<a href="order.php?action=empty"><button class="btn btn-danger"></span> Empty Cart </button></a><a href="order.php?action=savecart"> <button class="btn btn-warning">Save Cart</button></a>&nbsp;<a href="payment.php"><button class="btn btn-success pull-right"></span> Check Out</button></a>';
             ?>
             
             </div>
@@ -282,44 +282,83 @@ if (isset($_SESSION['login_user2'])) {
             <?php
 
 
+            //ADD ITEM TO CART
             if(isset($_POST["add"]))
             {
-            if(isset($_SESSION["cart"]))
-            {
-            $item_array_id = array_column($_SESSION["cart"], "food_id");
-            if(!in_array($_GET["id"], $item_array_id))
-            {
-            $count = count($_SESSION["cart"]);
+	            if(isset($_SESSION["cart"]))
+	            {
+		            $item_array_id = array_column($_SESSION["cart"], "food_id");
+		            if(!in_array($_GET["id"], $item_array_id))
+		            {
+		            $count = count($_SESSION["cart"]);
 
-            $item_array = array(
-            'food_id' => $_GET["id"],
-            'food_name' => $_POST["hidden_name"],
-            'food_price' => $_POST["hidden_price"],
-            'R_ID' => $_POST["hidden_RID"],
-            'food_quantity' => $_POST["quantity"]
-            );
-            $_SESSION["cart"][$count] = $item_array;
-            echo '<script>window.location="order.php"</script>';
+		            $item_array = array(
+		            'food_id' => $_GET["id"],
+		            'food_name' => $_POST["hidden_name"],
+		            'food_price' => $_POST["hidden_price"],
+		            'R_ID' => $_POST["hidden_RID"],
+		            'food_quantity' => $_POST["quantity"]
+		            );
+		            $_SESSION["cart"][$count] = $item_array;
+		            echo '<script>window.location="order.php"</script>';
+		            }
+		            else
+		            {
+		            echo '<script>alert("Products already added to cart")</script>';
+		            echo '<script>window.location="order.php"</script>';
+		            }
+	            }
+	            else
+	            {
+		            $item_array = array(
+		            'food_id' => $_GET["id"],
+		            'food_name' => $_POST["hidden_name"],
+		            'food_price' => $_POST["hidden_price"],
+		            'R_ID' => $_POST["hidden_RID"],
+		            'food_quantity' => $_POST["quantity"]
+		            );
+		            $_SESSION["cart"][0] = $item_array;            
+		            echo '<script>window.location="order.php"</script>';
+	            }
             }
-            else
+
+            //SAVE CART TO DB
+
+            if(isset($_GET["action"]))
             {
-            echo '<script>alert("Products already added to cart")</script>';
-            echo '<script>window.location="order.php"</script>';
-            }
-            }
-            else
+            if($_GET["action"] == "savecart")
             {
-            $item_array = array(
-            'food_id' => $_GET["id"],
-            'food_name' => $_POST["hidden_name"],
-            'food_price' => $_POST["hidden_price"],
-            'R_ID' => $_POST["hidden_RID"],
-            'food_quantity' => $_POST["quantity"]
-            );
-            $_SESSION["cart"][0] = $item_array;            
+            foreach($_SESSION["cart"] as $keys => $values)
+            {
+				$F_ID = $values["food_id"];
+			    $foodname = $values["food_name"];
+			    $quantity = $values["food_quantity"];
+			    $price =  $values["food_price"];
+			    $username = $_SESSION["login_user2"];
+			    $order_date = date('Y-m-d');
+			    $number = $_SESSION["extra_loc"];
+
+			    $query = "INSERT INTO CART (F_ID, foodname, price,  quantity, order_date, username) 
+			    VALUES ('" . $F_ID . "','" . $foodname . "','" . $price . "','" . $quantity . "','" . $order_date . "','" . $username . "')";
+			             
+
+			    $success = $conn->query($query);         
+
+			    if(!$success)
+			    {
+			    	echo '<script>alert("ERROR WHILE SAVING")</script>';
+			    }
+			      
+			  
+            echo '<script>alert("Cart has been saved. Cart ID is '. $number .' ")</script>';
             echo '<script>window.location="order.php"</script>';
+            
             }
             }
+            }
+
+            //REMOVE ITEM FROM CART
+
             if(isset($_GET["action"]))
             {
             if($_GET["action"] == "delete")
@@ -329,12 +368,14 @@ if (isset($_SESSION['login_user2'])) {
             if($values["food_id"] == $_GET["id"])
             {
             unset($_SESSION["cart"][$keys]);
-            echo '<script>alert("Food has been removed")</script>';
+            echo '<script>alert("Item has been removed")</script>';
             echo '<script>window.location="order.php"</script>';
             }
             }
             }
             }
+
+            //EMPTY CART
 
             if(isset($_GET["action"]))
             {
@@ -344,7 +385,16 @@ if (isset($_SESSION['login_user2'])) {
             {
 
             unset($_SESSION["cart"]);
-            echo '<script>alert("Cart is made empty!")</script>';
+            $username = $_SESSION["login_user2"];
+            $query2 = "DELETE FROM CART WHERE CART.username ='" . $username . "';";
+            $success2 = $conn->query($query2); 
+            if(!$success2)
+			    {
+			    	echo '<script>alert("ERROR WHILE DELETING")</script>';
+			    }
+            else {
+            	echo '<script>alert("Cart is made empty!")</script>';
+            }
             echo '<script>window.location="order.php"</script>';
 
             }

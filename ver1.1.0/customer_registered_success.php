@@ -11,6 +11,14 @@
         color: #ffffff;
         
       }
+      a {
+        color: white;
+        text-decoration: underline;
+      }
+      a:hover {
+        color: white;
+        cursor: pointer;
+      }
   </style>
 
   <body>
