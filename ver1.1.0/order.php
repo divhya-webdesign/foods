@@ -14,6 +14,8 @@ $conn = Connect();
       <link rel="stylesheet"  href="css/fixed.css">
       <link href="https://fonts.googleapis.com/css2?family=Lato:wght@700&display=swap" rel="stylesheet">
 	  <link rel="stylesheet" href="font/flaticon.css">
+	  <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
+	  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.0.0/css/font-awesome.min.css">
 
 
 
@@ -148,7 +150,7 @@ if (isset($_SESSION['login_user2'])) {
       </li>  
       
     <li class="nav-item" style="padding-right:15px">
-      <a class="nav-link disabled" href="#"> <b style="color:#ceb829">Signed in as <?php echo $_SESSION['login_user2']; ?> </b></a>
+      <a class="nav-link disabled" href="#"> <b style="color:#ceb829"><i class="fas fa-user-circle" style="font-size:30px"></i></span> <?php echo $_SESSION['login_user2']; ?> </b></a>
     </li>
 
     <li class="nav-item clickable" onclick="toggleCart()">
