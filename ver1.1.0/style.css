@@ -1,14 +1,4 @@
 
-.aboutusrow {
-  width: 100%;
-  background: #FFFFFF;
-  padding-top: 90px;
-  padding-bottom: 90px;
-  display: flex;
-  margin-right: -15px;
-  margin-left: -15px;
-  margin: 2%;
-}
 /*--- Extra Bootstrap Column Padding --*/
 [class*="col-"] {
   padding: 1rem;
@@ -23,12 +13,10 @@
 /*============= IMAGE SLIDER =============*/
 
 .carousel-item {
-  background: no-repeat center center scroll;
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover;
+  height: 100vh;
 }
+
+
 /*---Change Carousel Transition Speed --*/
 .carousel-item-next, .carousel-item-prev, .carousel-item.active {
   display: block;
@@ -38,10 +26,34 @@
 
 }
 
+/*---.aboutus,.btnbox,.testimony .person.image img --*/
+
+.aboutus{
+    background: #FFFFFF;
+    border: solid 2px #b49383;
+    box-shadow: 0px 45px 70px rgba(0,0,0,0.24); 
+	  
+}
+.btnbox{
+  height:max-content;
+  color:white;
+  border: 1px solid black; 
+  margin: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);  
+}
+.testimony .person .image img {
+  width: 50px;
+  border-radius: 50%;
+  max-width: 100%;
+}
 .testimony {
-  background: #c49b63;
+  background:#b49383;
   padding: 2em;
-  color: #fff;
+  color: rgb(0, 0, 0);
 }
 
 button{
