@@ -311,7 +311,7 @@ url(https://www.reviewtrackers.com/wp-content/uploads/blog-hero_the-modern-guide
 		  <div class="col-lg align-self-sm-end">
 			<div class="testimony" style="font-size: 18px">
 			   <blockquote>
-				  <p>“The food was fresh, properly prepared and a great value for the price. We highly recommend it. The breakfast buffet on Sunday was equally as good.”</p>
+				  <p>“The food was fresh, properly prepared and a great value for the price. The breakfast buffet on Sunday was equally as good.”</p>
 				</blockquote>
 				<div class="person d-flex mt-4">
 				  <div class="image mr-3 align-self-center">
@@ -325,7 +325,7 @@ url(https://www.reviewtrackers.com/wp-content/uploads/blog-hero_the-modern-guide
 		  <div class="col-lg align-self-sm-end " >
 			<div class="testimony" style="font-size: 18px">
 			   <blockquote>
-				  <p>“A very friendly welcoming place to spend a couple of nights.  All personnel were very well trained, accommodating and helpful. Food was delicious and the view was wonderful while dining.”</p>
+				  <p>“All personnel were very well trained and accommodating. Food was delicious and the view was wonderful while dining.”</p>
 				</blockquote>
 				<div class="person d-flex mt-4">
 				  <div class="image mr-3 align-self-center">
@@ -339,7 +339,7 @@ url(https://www.reviewtrackers.com/wp-content/uploads/blog-hero_the-modern-guide
 		  <div class="col-lg align-self-sm-end" style="color: gray;">
 			<div class="testimony" style="font-size: 18px">
 			   <blockquote>
-				  <p>“Great service. Wide selection of good quality, delicious food. Very veggie friendly. Excellent value & a lot less pricey than far inferior establishments.”</p>
+				  <p>“Wide selection of good quality, delicious food. Excellent value & a lot less pricey than far inferior establishments.”</p>
 				</blockquote>
 				<div class="person d-flex mt-4">
 				  <div class="image mr-3 align-self-center">
@@ -353,7 +353,7 @@ url(https://www.reviewtrackers.com/wp-content/uploads/blog-hero_the-modern-guide
 		  <div class="col-lg align-self-sm-end" >
 			<div class="testimony" style="font-size: 18px">
 			  <blockquote>
-				<p>“Everything was handled with efficiency and attention to every detail was given. Food was delicious and the view was wonderful while dining. Thanks for doing such an outstanding job.</p>
+				<p>“Everything was handled with efficiency and an amazing view. Thanks for doing such an outstanding job"</p>
 			  </blockquote>
 			  <div class="person d-flex mt-4">
 				<div class="image mr-3 align-self-center">
@@ -367,7 +367,7 @@ url(https://www.reviewtrackers.com/wp-content/uploads/blog-hero_the-modern-guide
 		  <div class="col-lg align-self-sm-end">
 			<div class="testimony" style="font-size: 18px">
 			   <blockquote>
-				  <p>“Pleasantly surprised with their dinner service - a menu full of intriguing entrees, the food  ordered was excellent food .”</p>
+				  <p>“Pleasantly surprised with their dinner service - a menu full of intriguing entrees, the food  ordered was excellent food.”</p>
 				</blockquote>
 				<div class="person d-flex mt-4">
 				  <div class="image mr-3 align-self-center">
